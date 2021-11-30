@@ -1,13 +1,16 @@
 #include "Definitions.h"
 
-#define TIMER_1_MAX_VALUE 65535
-#define ONE_SECOND         1000
+#define TIMER_1_MAX_VALUE  65535
+#define ONE_SECOND          1000
+#define TIMER_1_CORRECTION    18
 
 void __interrupt(high_priority) timer_overflow_interrupt(void){
     if(TMR1IF){
         TMR1IF = 0;
-        TMR1 = TIMER_1_MAX_VALUE - ONE_SECOND;
+        TMR1 = TIMER_1_MAX_VALUE - ONE_SECOND + TIMER_1_CORRECTION;
     }
+    
+    Nop();
 
     return;
 }
@@ -24,7 +27,7 @@ void main(void) {
 
     // reset timer
     TMR1IF = 0;
-    TMR1 = TIMER_1_MAX_VALUE - ONE_SECOND;
+    TMR1 = TIMER_1_MAX_VALUE - ONE_SECOND + TIMER_1_CORRECTION;
 
     // idle
     while(1){
@@ -33,4 +36,3 @@ void main(void) {
     
     return;
 }
-

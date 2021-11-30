@@ -1,0 +1,67 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"4 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"6 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+[v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
+"15
+[v _main main `(v  1 e 1 0 ]
+[s S27 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"2616 D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h
+[s S36 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S40 . 1 `S27 1 . 1 0 `S36 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES40  1 e 1 @3997 ]
+"5530
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+"5633
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"6692
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+"8512
+[v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
+"15 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"35
+} 0
+"6
+[v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
+{
+"13
+} 0
