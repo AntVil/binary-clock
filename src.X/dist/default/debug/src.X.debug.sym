@@ -1,5 +1,5 @@
-__S0 58 0 ABS 0
-__S1 2 0 ABS 0
+__S0 184 0 ABS 0
+__S1 E 0 ABS 0
 __S2 0 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -7,22 +7,24 @@ __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 _timer_overflow_interrupt 8 0 CODE 0
 _TMR1 FCE 0 ABS 0
-_main 32 0 CODE 0
+_main 152 0 CODE 0
 ___sp 0 0 STACK 2
-btemp 1 0 COMRAM 1
+btemp D 0 COMRAM 1
 start E 0 CODE 0
+_hour 5 0 COMRAM 1
 __size_of_timer_overflow_interrupt 0 0 ABS 0
 __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
 __LRAM 1 0 ABS 0
 _T1CON FCD 0 ABS 0
-ttemp5 2 0 COMRAM 1
-ttemp6 5 0 COMRAM 1
-ttemp7 9 0 COMRAM 1
-wtemp8 2 0 COMRAM 1
+ttemp5 E 0 COMRAM 1
+ttemp6 11 0 COMRAM 1
+ttemp7 15 0 COMRAM 1
+wtemp8 E 0 COMRAM 1
 __Hconfig 30000E 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
+?___awmod 7 0 COMRAM 1
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hrparam 0 0 COMRAM 1
@@ -38,7 +40,7 @@ __Lbss 0 0 RAM 1
 ___param_bank 0 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
-int$flags 1 0 COMRAM 1
+int$flags D 0 COMRAM 1
 _PIE1bits F9D 0 ABS 0
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
@@ -70,12 +72,16 @@ _INTCON FF2 0 ABS 0
 isa$xinst 0 0 ABS 0
 __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
+__end_of___awmod C2 0 CODE 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 isa$std 1 0 ABS 0
+_second 1 0 COMRAM 1
 stackhi 5FF 0 ABS 0
-__Htemp 2 0 COMRAM 1
-__Ltemp 1 0 COMRAM 1
+_minute 3 0 COMRAM 1
+___awmod@sign C 0 COMRAM 1
+__Htemp E 0 COMRAM 1
+__Ltemp D 0 COMRAM 1
 stacklo 80 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
@@ -84,11 +90,11 @@ __Linit E 0 CODE 0
 __Hintcodelo E 0 CODE 0
 __Lintcodelo E 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main 4E 0 CODE 0
+__end_of_main 16E 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-end_of_initialization 4E 0 CODE 0
+end_of_initialization 17A 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -109,11 +115,17 @@ __Hpowerup E 0 CODE 0
 __Lpowerup E 0 CODE 0
 __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
-__ptext0 32 0 CODE 0
-__end_of_timer_overflow_interrupt 32 0 CODE 0
+__ptext0 152 0 CODE 0
+__Htext2 0 0 ABS 0
+__Ltext2 0 0 ABS 0
+__ptext2 12 0 CODE 0
+__HbssCOMRAM 0 0 ABS 0
+__LbssCOMRAM 0 0 ABS 0
+__end_of_timer_overflow_interrupt 152 0 CODE 0
+__pbssCOMRAM 1 0 COMRAM 1
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization 4E 0 CODE 0
+__end_of__initialization 17A 0 CODE 0
 ___rparam_used 1 0 ABS 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
@@ -123,15 +135,16 @@ __Hidloc 200008 0 IDLOC 5
 __Lidloc 0 0 IDLOC 5
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-int_func 12 0 CODE 0
+int_func C2 0 CODE 0
+___awmod 12 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
 __Hspace_0 600 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
-__pcstackCOMRAM 0 0 COMRAM 1
-__Hspace_1 2 0 ABS 0
+__pcstackCOMRAM 7 0 COMRAM 1
+__Hspace_1 E 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 0 0 SMALLCONST 0
 __Lsmallconst 0 0 SMALLCONST 0
@@ -141,7 +154,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 4E 0 CODE 0
+__pcinit 16E 0 CODE 0
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __size_of_main 0 0 ABS 0
@@ -150,6 +163,7 @@ __Lconst 0 0 CONST 0
 __Hspace_4 60000E 0 ABS 0
 __Lspace_4 0 0 ABS 0
 ___inthi_sp 0 0 STACK 2
+___awmod@divisor 9 0 COMRAM 1
 ___intlo_sp 0 0 STACK 2
 __smallconst 0 0 SMALLCONST 0
 __Hreset_vec 4 0 CODE 0
@@ -157,47 +171,85 @@ __Lreset_vec 0 0 CODE 0
 __accesstop 80 0 ABS 0
 __Hintcode_body 0 0 ABS 0
 __Lintcode_body 0 0 ABS 0
-__pintcode_body 12 0 CODE 0
+__pintcode_body C2 0 CODE 0
 intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-start_initialization 4E 0 CODE 0
-__initialization 4E 0 CODE 0
+start_initialization 16E 0 CODE 0
+__size_of___awmod 0 0 ABS 0
+__initialization 16E 0 CODE 0
+___awmod@dividend 7 0 COMRAM 1
 __activetblptr 0 0 ABS 0
+___awmod@counter B 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
-intcode 8 57 CODE 8 0
-temp 1 1 COMRAM 1 1
+intcode 8 183 CODE 8 0
+bssCOMRAM 1 D COMRAM 1 1
 %locals
 dist/default/debug\src.X.debug.o
 D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h
-C:\Users\anton\AppData\Local\Temp\xcAskao.s
-442 4E 0 CODE 0
-444 4E 0 CODE 0
-447 4E 0 CODE 0
-453 4E 0 CODE 0
-455 4E 0 CODE 0
-456 50 0 CODE 0
-457 52 0 CODE 0
-458 54 0 CODE 0
+C:\Users\anton\AppData\Local\Temp\xcAsp0o.s
+446 16E 0 CODE 0
+448 16E 0 CODE 0
+451 16E 0 CODE 0
+469 16E 0 CODE 0
+470 170 0 CODE 0
+471 172 0 CODE 0
+472 174 0 CODE 0
+473 176 0 CODE 0
+474 178 0 CODE 0
+480 17A 0 CODE 0
+482 17A 0 CODE 0
+483 17C 0 CODE 0
+484 17E 0 CODE 0
+485 180 0 CODE 0
 Main.c
-18 32 0 CODE 0
-20 32 0 CODE 0
-23 36 0 CODE 0
-26 38 0 CODE 0
-29 3C 0 CODE 0
-30 3E 0 CODE 0
-33 46 0 CODE 0
-35 46 0 CODE 0
-C:\Users\anton\AppData\Local\Temp\xcAskao.s
-723 8 0 CODE 0
+34 152 0 CODE 0
+36 152 0 CODE 0
+39 156 0 CODE 0
+42 158 0 CODE 0
+45 15C 0 CODE 0
+46 15E 0 CODE 0
+49 166 0 CODE 0
+51 166 0 CODE 0
+C:\Users\anton\AppData\Local\Temp\xcAsp0o.s
+771 8 0 CODE 0
 Main.c
-7 8 0 CODE 0
+11 8 0 CODE 0
 Main.c
+11 C2 0 CODE 0
+12 C4 0 CODE 0
+13 D2 0 CODE 0
+14 D4 0 CODE 0
+16 DC 0 CODE 0
+17 E0 0 CODE 0
+18 FC 0 CODE 0
+19 104 0 CODE 0
+20 108 0 CODE 0
+21 124 0 CODE 0
+22 12C 0 CODE 0
+29 14C 0 CODE 0
+32 14E 0 CODE 0
+D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
 7 12 0 CODE 0
-8 14 0 CODE 0
-9 22 0 CODE 0
-10 24 0 CODE 0
-13 2C 0 CODE 0
-16 2E 0 CODE 0
+12 12 0 CODE 0
+13 16 0 CODE 0
+14 24 0 CODE 0
+15 2C 0 CODE 0
+17 30 0 CODE 0
+18 3E 0 CODE 0
+19 46 0 CODE 0
+20 58 0 CODE 0
+21 5C 0 CODE 0
+22 60 0 CODE 0
+23 66 0 CODE 0
+21 68 0 CODE 0
+26 76 0 CODE 0
+27 8C 0 CODE 0
+28 94 0 CODE 0
+29 9A 0 CODE 0
+31 A0 0 CODE 0
+32 B0 0 CODE 0
+33 B8 0 CODE 0
+34 C0 0 CODE 0

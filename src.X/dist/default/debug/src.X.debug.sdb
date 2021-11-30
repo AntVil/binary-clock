@@ -3,6 +3,8 @@
 [d edition pro ]
 [d chip 18F4520 ]
 [d frameptr 4065 ]
+"7 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\float.c
@@ -27,9 +29,9 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"7 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"11 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 [v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
-"18
+"34
 [v _main main `(v  1 e 1 0 ]
 [s S31 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
@@ -55,13 +57,30 @@
 [v _INTCON INTCON `VEuc  1 e 1 @4082 ]
 "8512
 [v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
-"18 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"7 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+[v _hour hour `i  1 e 2 0 ]
+"8
+[v _minute minute `i  1 e 2 0 ]
+"9
+[v _second second `i  1 e 2 0 ]
+"34
 [v _main main `(v  1 e 1 0 ]
 {
-"38
+"54
 } 0
-"7
+"11
 [v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
 {
-"16
+"32
+} 0
+"7 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
 } 0

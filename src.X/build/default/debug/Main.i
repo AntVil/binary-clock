@@ -4585,10 +4585,26 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+int hour;
+int minute;
+int second;
+
 void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
     if(TMR1IF){
         TMR1IF = 0;
         TMR1 = 65535 - 1000 + 18;
+
+        second++;
+        if(second > 60){
+            second = 0;
+            minute++;
+            if(minute > 60){
+                minute = 0;
+                hour = (hour + 1) % 24;
+            }
+        }
+
+
     }
 
     __nop();

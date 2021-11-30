@@ -512,73 +512,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_timer_overflow_interrupt `(v ~T0 @X0 0 e ]
 "7 Main.c
-[; ;Main.c: 7: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
+[; ;Main.c: 7: int hour;
+[v _hour `i ~T0 @X0 1 e ]
+"8
+[; ;Main.c: 8: int minute;
+[v _minute `i ~T0 @X0 1 e ]
+"9
+[; ;Main.c: 9: int second;
+[v _second `i ~T0 @X0 1 e ]
+[v $root$_timer_overflow_interrupt `(v ~T0 @X0 0 e ]
+"11
+[; ;Main.c: 11: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
 [v _timer_overflow_interrupt `(v ~T41 @X0 1 ef ]
 {
 [e :U _timer_overflow_interrupt ]
 [f ]
-"8
-[; ;Main.c: 8:     if(TMR1IF){
+"12
+[; ;Main.c: 12:     if(TMR1IF){
 [e $ ! _TMR1IF 282  ]
 {
-"9
-[; ;Main.c: 9:         TMR1IF = 0;
+"13
+[; ;Main.c: 13:         TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"10
-[; ;Main.c: 10:         TMR1 = 65535 - 1000 + 18;
+"14
+[; ;Main.c: 14:         TMR1 = 65535 - 1000 + 18;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 18 `i `l `us ]
-"11
-[; ;Main.c: 11:     }
+"16
+[; ;Main.c: 16:         second++;
+[e ++ _second -> 1 `i ]
+"17
+[; ;Main.c: 17:         if(second > 60){
+[e $ ! > _second -> 60 `i 283  ]
+{
+"18
+[; ;Main.c: 18:             second = 0;
+[e = _second -> 0 `i ]
+"19
+[; ;Main.c: 19:             minute++;
+[e ++ _minute -> 1 `i ]
+"20
+[; ;Main.c: 20:             if(minute > 60){
+[e $ ! > _minute -> 60 `i 284  ]
+{
+"21
+[; ;Main.c: 21:                 minute = 0;
+[e = _minute -> 0 `i ]
+"22
+[; ;Main.c: 22:                 hour = (hour + 1) % 24;
+[e = _hour % + _hour -> 1 `i -> 24 `i ]
+"23
+[; ;Main.c: 23:             }
+}
+[e :U 284 ]
+"24
+[; ;Main.c: 24:         }
+}
+[e :U 283 ]
+"27
+[; ;Main.c: 27:     }
 }
 [e :U 282 ]
-"13
-[; ;Main.c: 13:     __nop();
+"29
+[; ;Main.c: 29:     __nop();
 [e ( ___nop ..  ]
-"15
-[; ;Main.c: 15:     return;
+"31
+[; ;Main.c: 31:     return;
 [e $UE 281  ]
-"16
-[; ;Main.c: 16: }
+"32
+[; ;Main.c: 32: }
 [e :UE 281 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"18
-[; ;Main.c: 18: void main(void) {
+"34
+[; ;Main.c: 34: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"20
-[; ;Main.c: 20:     INTCON = 0b11000000;
+"36
+[; ;Main.c: 36:     INTCON = 0b11000000;
 [e = _INTCON -> -> 192 `i `uc ]
-"23
-[; ;Main.c: 23:     PIE1bits.TMR1IE = 1;
+"39
+[; ;Main.c: 39:     PIE1bits.TMR1IE = 1;
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"26
-[; ;Main.c: 26:     T1CON = 0b00000001;
+"42
+[; ;Main.c: 42:     T1CON = 0b00000001;
 [e = _T1CON -> -> 1 `i `uc ]
-"29
-[; ;Main.c: 29:     TMR1IF = 0;
+"45
+[; ;Main.c: 45:     TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"30
-[; ;Main.c: 30:     TMR1 = 65535 - 1000 + 18;
+"46
+[; ;Main.c: 46:     TMR1 = 65535 - 1000 + 18;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 18 `i `l `us ]
-"33
-[; ;Main.c: 33:     while(1){
-[e :U 285 ]
+"49
+[; ;Main.c: 49:     while(1){
+[e :U 287 ]
 {
-"35
-[; ;Main.c: 35:     }
+"51
+[; ;Main.c: 51:     }
 }
-[e :U 284 ]
-[e $U 285  ]
 [e :U 286 ]
-"37
-[; ;Main.c: 37:     return;
-[e $UE 283  ]
-"38
-[; ;Main.c: 38: }
-[e :UE 283 ]
+[e $U 287  ]
+[e :U 288 ]
+"53
+[; ;Main.c: 53:     return;
+[e $UE 285  ]
+"54
+[; ;Main.c: 54: }
+[e :UE 285 ]
 }
