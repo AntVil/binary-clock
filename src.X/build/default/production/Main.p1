@@ -7,8 +7,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5633
 [; ;D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
-"25 Main.c
-[; ;Main.c: 25: void print_binary(int num);
+"30 Main.c
+[; ;Main.c: 30: void print_binary(int num);
 [v _print_binary `(v ~T0 @X0 0 ef1`i ]
 "111 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
@@ -685,263 +685,263 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"28 Main.c
-[; ;Main.c: 28: int milisecond = 0;
+"33 Main.c
+[; ;Main.c: 33: int milisecond = 0;
 [v _milisecond `i ~T0 @X0 1 e ]
 [i _milisecond
 -> 0 `i
 ]
-"29
-[; ;Main.c: 29: int second = -1;
+"34
+[; ;Main.c: 34: int second = -1;
 [v _second `i ~T0 @X0 1 e ]
 [i _second
 -U -> 1 `i
 ]
-"30
-[; ;Main.c: 30: int minute = 0;
+"35
+[; ;Main.c: 35: int minute = 0;
 [v _minute `i ~T0 @X0 1 e ]
 [i _minute
 -> 0 `i
 ]
-"31
-[; ;Main.c: 31: int hour = 0;
+"36
+[; ;Main.c: 36: int hour = 0;
 [v _hour `i ~T0 @X0 1 e ]
 [i _hour
 -> 0 `i
 ]
 [v $root$_timer_overflow_interrupt `(v ~T0 @X0 0 e ]
-"33
-[; ;Main.c: 33: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
+"38
+[; ;Main.c: 38: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
 [v _timer_overflow_interrupt `(v ~T41 @X0 1 ef ]
 {
 [e :U _timer_overflow_interrupt ]
 [f ]
-"35
-[; ;Main.c: 35:     if(TMR1IF){
+"40
+[; ;Main.c: 40:     if(TMR1IF){
 [e $ ! _TMR1IF 284  ]
 {
-"37
-[; ;Main.c: 37:         TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
-"38
-[; ;Main.c: 38:         TMR1 = 65535 - 1000 + 35;
-[e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"41
-[; ;Main.c: 41:         milisecond++;
-[e ++ _milisecond -> 1 `i ]
 "42
-[; ;Main.c: 42:         if(milisecond >= 1000){
+[; ;Main.c: 42:         TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"43
+[; ;Main.c: 43:         TMR1 = 65535 - 1000 + 35;
+[e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
+"46
+[; ;Main.c: 46:         milisecond++;
+[e ++ _milisecond -> 1 `i ]
+"47
+[; ;Main.c: 47:         if(milisecond >= 1000){
 [e $ ! >= _milisecond -> 1000 `i 285  ]
 {
-"43
-[; ;Main.c: 43:             milisecond = 0;
+"48
+[; ;Main.c: 48:             milisecond = 0;
 [e = _milisecond -> 0 `i ]
-"44
-[; ;Main.c: 44:             second++;
+"49
+[; ;Main.c: 49:             second++;
 [e ++ _second -> 1 `i ]
-"45
-[; ;Main.c: 45:             if(second >= 60){
+"50
+[; ;Main.c: 50:             if(second >= 60){
 [e $ ! >= _second -> 60 `i 286  ]
 {
-"46
-[; ;Main.c: 46:                 second = 0;
+"51
+[; ;Main.c: 51:                 second = 0;
 [e = _second -> 0 `i ]
-"47
-[; ;Main.c: 47:                 minute++;
+"52
+[; ;Main.c: 52:                 minute++;
 [e ++ _minute -> 1 `i ]
-"48
-[; ;Main.c: 48:                 if(minute >= 60){
+"53
+[; ;Main.c: 53:                 if(minute >= 60){
 [e $ ! >= _minute -> 60 `i 287  ]
 {
-"49
-[; ;Main.c: 49:                     minute = 0;
+"54
+[; ;Main.c: 54:                     minute = 0;
 [e = _minute -> 0 `i ]
-"50
-[; ;Main.c: 50:                     hour = (hour + 1) % 24;
+"55
+[; ;Main.c: 55:                     hour = (hour + 1) % 24;
 [e = _hour % + _hour -> 1 `i -> 24 `i ]
-"51
-[; ;Main.c: 51:                 }
+"56
+[; ;Main.c: 56:                 }
 }
 [e :U 287 ]
-"52
-[; ;Main.c: 52:             }
+"57
+[; ;Main.c: 57:             }
 }
 [e :U 286 ]
-"55
-[; ;Main.c: 55:             print_binary(hour);
-[e ( _print_binary (1 _hour ]
-"56
-[; ;Main.c: 56:             printf(":");
-[e ( _printf :s 1C ]
-"57
-[; ;Main.c: 57:             print_binary(minute);
-[e ( _print_binary (1 _minute ]
-"58
-[; ;Main.c: 58:             printf(":");
-[e ( _printf :s 2C ]
-"59
-[; ;Main.c: 59:             print_binary(second);
-[e ( _print_binary (1 _second ]
 "60
-[; ;Main.c: 60:             printf("\n");
-[e ( _printf :s 3C ]
+[; ;Main.c: 60:             print_binary(hour);
+[e ( _print_binary (1 _hour ]
+"61
+[; ;Main.c: 61:             printf(":");
+[e ( _printf :s 1C ]
+"62
+[; ;Main.c: 62:             print_binary(minute);
+[e ( _print_binary (1 _minute ]
 "63
-[; ;Main.c: 63:             LATA = (unsigned char)second;
-[e = _LATA -> _second `uc ]
+[; ;Main.c: 63:             printf(":");
+[e ( _printf :s 2C ]
 "64
-[; ;Main.c: 64:             LATB = (unsigned char)minute;
-[e = _LATB -> _minute `uc ]
+[; ;Main.c: 64:             print_binary(second);
+[e ( _print_binary (1 _second ]
 "65
-[; ;Main.c: 65:             LATD = (unsigned char)hour;
+[; ;Main.c: 65:             printf("\n");
+[e ( _printf :s 3C ]
+"68
+[; ;Main.c: 68:             LATA = (unsigned char)second;
+[e = _LATA -> _second `uc ]
+"69
+[; ;Main.c: 69:             LATB = (unsigned char)minute;
+[e = _LATB -> _minute `uc ]
+"70
+[; ;Main.c: 70:             LATD = (unsigned char)hour;
 [e = _LATD -> _hour `uc ]
-"66
-[; ;Main.c: 66:         }
+"71
+[; ;Main.c: 71:         }
 }
 [e :U 285 ]
-"67
-[; ;Main.c: 67:     }
+"72
+[; ;Main.c: 72:     }
 }
 [e :U 284 ]
-"69
-[; ;Main.c: 69:     return;
+"74
+[; ;Main.c: 74:     return;
 [e $UE 283  ]
-"70
-[; ;Main.c: 70: }
+"75
+[; ;Main.c: 75: }
 [e :UE 283 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"72
-[; ;Main.c: 72: void main(void) {
+"77
+[; ;Main.c: 77: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"76
-[; ;Main.c: 76:     ADCON1bits.PCFG = 0b1111;
-[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-"79
-[; ;Main.c: 79:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"80
-[; ;Main.c: 80:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
 "81
-[; ;Main.c: 81:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;Main.c: 81:     ADCON1bits.PCFG = 0b1111;
+[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
 "84
-[; ;Main.c: 84:     TRISCbits.RC0 = 1;
-[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
-"87
-[; ;Main.c: 87:     LATA = 0;
-[e = _LATA -> -> 0 `i `uc ]
-"88
-[; ;Main.c: 88:     LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
+[; ;Main.c: 84:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"85
+[; ;Main.c: 85:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"86
+[; ;Main.c: 86:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "89
-[; ;Main.c: 89:     LATD = 0;
+[; ;Main.c: 89:     TRISCbits.RC0 = 1;
+[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
+"92
+[; ;Main.c: 92:     LATA = 0;
+[e = _LATA -> -> 0 `i `uc ]
+"93
+[; ;Main.c: 93:     LATB = 0;
+[e = _LATB -> -> 0 `i `uc ]
+"94
+[; ;Main.c: 94:     LATD = 0;
 [e = _LATD -> -> 0 `i `uc ]
-"95
-[; ;Main.c: 95:     TRISCbits.RC7 = 1;
-[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-"96
-[; ;Main.c: 96:     TRISCbits.RC6 = 1;
-[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-"97
-[; ;Main.c: 97:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"98
-[; ;Main.c: 98:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "100
-[; ;Main.c: 100:     printf("\n\n");
+[; ;Main.c: 100:     TRISCbits.RC7 = 1;
+[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
+"101
+[; ;Main.c: 101:     TRISCbits.RC6 = 1;
+[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
+"102
+[; ;Main.c: 102:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"103
+[; ;Main.c: 103:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"105
+[; ;Main.c: 105:     printf("\n\n");
 [e ( _printf :s 4C ]
-"106
-[; ;Main.c: 106:     INTCON = 0b11000000;
+"111
+[; ;Main.c: 111:     INTCON = 0b11000000;
 [e = _INTCON -> -> 192 `i `uc ]
-"109
-[; ;Main.c: 109:     PIE1bits.TMR1IE = 1;
+"114
+[; ;Main.c: 114:     PIE1bits.TMR1IE = 1;
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"112
-[; ;Main.c: 112:     T1CONbits.TMR1ON = 1;
+"117
+[; ;Main.c: 117:     T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"115
-[; ;Main.c: 115:     TMR1IF = 0;
+"120
+[; ;Main.c: 120:     TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"116
-[; ;Main.c: 116:     TMR1 = 65535 - 1000 + 35;
+"121
+[; ;Main.c: 121:     TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"119
-[; ;Main.c: 119:     while(1){
+"124
+[; ;Main.c: 124:     while(1){
 [e :U 290 ]
 {
-"120
-[; ;Main.c: 120:         if(PORTCbits.RC0){
+"125
+[; ;Main.c: 125:         if(PORTCbits.RC0){
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 292  ]
 {
-"121
-[; ;Main.c: 121:             milisecond = 0;
+"126
+[; ;Main.c: 126:             milisecond = 0;
 [e = _milisecond -> 0 `i ]
-"122
-[; ;Main.c: 122:             second = -1;
+"127
+[; ;Main.c: 127:             second = -1;
 [e = _second -U -> 1 `i ]
-"123
-[; ;Main.c: 123:             minute = 0;
+"128
+[; ;Main.c: 128:             minute = 0;
 [e = _minute -> 0 `i ]
-"124
-[; ;Main.c: 124:             hour = 0;
+"129
+[; ;Main.c: 129:             hour = 0;
 [e = _hour -> 0 `i ]
-"125
-[; ;Main.c: 125:         }
+"130
+[; ;Main.c: 130:         }
 }
 [e :U 292 ]
-"126
-[; ;Main.c: 126:     }
+"131
+[; ;Main.c: 131:     }
 }
 [e :U 289 ]
 [e $U 290  ]
 [e :U 291 ]
-"129
-[; ;Main.c: 129:     T1CONbits.TMR1ON = 0;
+"134
+[; ;Main.c: 134:     T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"131
-[; ;Main.c: 131:     return;
+"136
+[; ;Main.c: 136:     return;
 [e $UE 288  ]
-"132
-[; ;Main.c: 132: }
+"137
+[; ;Main.c: 137: }
 [e :UE 288 ]
 }
-"135
-[; ;Main.c: 135: void putch(unsigned char data) {
+"140
+[; ;Main.c: 140: void putch(unsigned char data) {
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"136
-[; ;Main.c: 136:     while(!PIR1bits.TXIF){
+"141
+[; ;Main.c: 141:     while(!PIR1bits.TXIF){
 [e $U 294  ]
 [e :U 295 ]
 {
-"137
-[; ;Main.c: 137:         continue;
+"142
+[; ;Main.c: 142:         continue;
 [e $U 294  ]
-"138
-[; ;Main.c: 138:     }
+"143
+[; ;Main.c: 143:     }
 }
 [e :U 294 ]
-"136
-[; ;Main.c: 136:     while(!PIR1bits.TXIF){
+"141
+[; ;Main.c: 141:     while(!PIR1bits.TXIF){
 [e $ ! != -> . . _PIR1bits 0 4 `i -> 0 `i 295  ]
 [e :U 296 ]
-"139
-[; ;Main.c: 139:     TXREG = data;
+"144
+[; ;Main.c: 144:     TXREG = data;
 [e = _TXREG _data ]
-"140
-[; ;Main.c: 140: }
+"145
+[; ;Main.c: 145: }
 [e :UE 293 ]
 }
-"143
-[; ;Main.c: 143: void print_binary(int num){
+"148
+[; ;Main.c: 148: void print_binary(int num){
 [v _print_binary `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _print_binary ]
@@ -950,8 +950,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F2856 `uc ~T0 @X0 -> 9 `i s ]
 [i F2856
 :U ..
-"145
-[; ;Main.c: 145:     char binary[] = "00000000";
+"150
+[; ;Main.c: 150:     char binary[] = "00000000";
 -> 48 `c
 -> 48 `c
 -> 48 `c
@@ -965,8 +965,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _binary `uc ~T0 @X0 -> 9 `i a ]
 [e = _binary F2856 ]
-"148
-[; ;Main.c: 148:     for(int i=0;i<8;i++){
+"153
+[; ;Main.c: 153:     for(int i=0;i<8;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -974,44 +974,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 299  ]
 [e :U 298 ]
 {
-"149
-[; ;Main.c: 149:         if(num % 2 == 1){
+"154
+[; ;Main.c: 154:         if(num % 2 == 1){
 [e $ ! == % _num -> 2 `i -> 1 `i 301  ]
 {
-"150
-[; ;Main.c: 150:             binary[7 - i] = '1';
+"155
+[; ;Main.c: 155:             binary[7 - i] = '1';
 [e = *U + &U _binary * -> -> - -> 7 `i _i `ui `ux -> -> # *U &U _binary `ui `ux -> -> 49 `ui `uc ]
-"151
-[; ;Main.c: 151:         }else{
+"156
+[; ;Main.c: 156:         }else{
 }
 [e $U 302  ]
 [e :U 301 ]
 {
-"152
-[; ;Main.c: 152:             binary[7 - i] = '0';
+"157
+[; ;Main.c: 157:             binary[7 - i] = '0';
 [e = *U + &U _binary * -> -> - -> 7 `i _i `ui `ux -> -> # *U &U _binary `ui `ux -> -> 48 `ui `uc ]
-"153
-[; ;Main.c: 153:         }
+"158
+[; ;Main.c: 158:         }
 }
 [e :U 302 ]
-"154
-[; ;Main.c: 154:         num /= 2;
+"159
+[; ;Main.c: 159:         num /= 2;
 [e =/ _num -> 2 `i ]
-"155
-[; ;Main.c: 155:     }
+"160
+[; ;Main.c: 160:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 298  ]
 [e :U 299 ]
 }
-"158
-[; ;Main.c: 158:     printf(binary);
+"163
+[; ;Main.c: 163:     printf(binary);
 [e ( _printf -> &U _binary `*Cuc ]
-"160
-[; ;Main.c: 160:     return;
+"165
+[; ;Main.c: 165:     return;
 [e $UE 297  ]
-"161
-[; ;Main.c: 161: }
+"166
+[; ;Main.c: 166: }
 [e :UE 297 ]
 }
 [p f _printf 9437696 ]

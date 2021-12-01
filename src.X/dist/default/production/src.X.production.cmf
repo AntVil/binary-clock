@@ -39,7 +39,7 @@ smallconst SMALLCONST 0 600 600 8 1
 dataCOMRAM COMRAM 1 46 46 B 1
 bssCOMRAM COMRAM 1 38 38 E 1
 config CONFIG 4 300000 300000 E 1
-$C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+$C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -85,8 +85,8 @@ MEDIUMCONST 1027-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\src.X.production.o
-8 intcode CODE >1998:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-8 intcode CODE >33:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+8 intcode CODE >1998:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+8 intcode CODE >38:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 C1C text14 CODE >7:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
 C1C text14 CODE >12:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
 C20 text14 CODE >13:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awmod.c
@@ -133,11 +133,11 @@ B44 text13 CODE >38:D:\Applications\Programming\Programming Environments\xc8_com
 B54 text13 CODE >39:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awdiv.c
 B5C text13 CODE >40:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awdiv.c
 B64 text13 CODE >41:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awdiv.c
-1006 text12 CODE >135:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-1008 text12 CODE >136:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-1008 text12 CODE >138:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-1016 text12 CODE >139:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-101A text12 CODE >140:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1006 text12 CODE >140:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1008 text12 CODE >141:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1008 text12 CODE >143:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1016 text12 CODE >144:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+101A text12 CODE >145:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 D64 text11 CODE >8:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
 D64 text11 CODE >12:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
 D88 text11 CODE >13:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
@@ -175,46 +175,46 @@ FC8 text8 CODE >5:D:\Applications\Programming\Programming Environments\xc8_compi
 FC8 text8 CODE >9:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 FD0 text8 CODE >10:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 FEC text8 CODE >13:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
-B66 text7 CODE >143:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-B66 text7 CODE >145:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-B78 text7 CODE >148:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-B80 text7 CODE >149:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-B8E text7 CODE >150:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-BAE text7 CODE >151:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-BB2 text7 CODE >152:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-BD2 text7 CODE >154:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-BEE text7 CODE >155:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-C0E text7 CODE >158:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-C1A text7 CODE >161:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-958 intcode_body CODE >33:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-97A intcode_body CODE >35:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-988 intcode_body CODE >37:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-98A intcode_body CODE >38:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-992 intcode_body CODE >41:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-996 intcode_body CODE >42:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9B2 intcode_body CODE >43:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9BA intcode_body CODE >44:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9BE intcode_body CODE >45:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9DA intcode_body CODE >46:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9E2 intcode_body CODE >47:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-9E6 intcode_body CODE >48:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A02 intcode_body CODE >49:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A0A intcode_body CODE >50:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A2A intcode_body CODE >55:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A36 intcode_body CODE >56:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A42 intcode_body CODE >57:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A4E intcode_body CODE >58:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A5A intcode_body CODE >59:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A66 intcode_body CODE >60:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A72 intcode_body CODE >63:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A76 intcode_body CODE >64:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A7A intcode_body CODE >65:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-A7E intcode_body CODE >70:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-FEE text5 CODE >135:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-FF2 text5 CODE >136:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-FF2 text5 CODE >138:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-1000 text5 CODE >139:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-1004 text5 CODE >140:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+B66 text7 CODE >148:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+B66 text7 CODE >150:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+B78 text7 CODE >153:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+B80 text7 CODE >154:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+B8E text7 CODE >155:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+BAE text7 CODE >156:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+BB2 text7 CODE >157:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+BD2 text7 CODE >159:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+BEE text7 CODE >160:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+C0E text7 CODE >163:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+C1A text7 CODE >166:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+958 intcode_body CODE >38:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+97A intcode_body CODE >40:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+988 intcode_body CODE >42:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+98A intcode_body CODE >43:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+992 intcode_body CODE >46:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+996 intcode_body CODE >47:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9B2 intcode_body CODE >48:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9BA intcode_body CODE >49:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9BE intcode_body CODE >50:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9DA intcode_body CODE >51:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9E2 intcode_body CODE >52:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+9E6 intcode_body CODE >53:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A02 intcode_body CODE >54:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A0A intcode_body CODE >55:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A2A intcode_body CODE >60:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A36 intcode_body CODE >61:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A42 intcode_body CODE >62:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A4E intcode_body CODE >63:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A5A intcode_body CODE >64:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A66 intcode_body CODE >65:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A72 intcode_body CODE >68:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A76 intcode_body CODE >69:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A7A intcode_body CODE >70:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+A7E intcode_body CODE >75:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+FEE text5 CODE >140:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+FF2 text5 CODE >141:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+FF2 text5 CODE >143:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1000 text5 CODE >144:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+1004 text5 CODE >145:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 CCC text4 CODE >8:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
 CCC text4 CODE >12:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
 CF2 text4 CODE >13:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\nf_fputc.c
@@ -252,66 +252,66 @@ FA0 text1 CODE >5:D:\Applications\Programming\Programming Environments\xc8_compi
 FA0 text1 CODE >9:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 FAA text1 CODE >10:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 FC6 text1 CODE >13:D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
-DFA text0 CODE >72:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-DFA text0 CODE >76:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-DFE text0 CODE >79:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E02 text0 CODE >80:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E06 text0 CODE >81:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E0A text0 CODE >84:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E0C text0 CODE >87:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E10 text0 CODE >88:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E14 text0 CODE >89:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E18 text0 CODE >95:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E1A text0 CODE >96:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E1C text0 CODE >97:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E1E text0 CODE >98:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E20 text0 CODE >100:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E2E text0 CODE >106:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E32 text0 CODE >109:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E34 text0 CODE >112:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E36 text0 CODE >115:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E38 text0 CODE >116:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E40 text0 CODE >120:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E4E text0 CODE >121:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E56 text0 CODE >122:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E5A text0 CODE >123:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-E62 text0 CODE >124:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
-F5A cinit CODE >526:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F5A cinit CODE >528:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F5A cinit CODE >531:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F5A cinit CODE >576:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F5C cinit CODE >577:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F5E cinit CODE >578:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F60 cinit CODE >579:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F62 cinit CODE >580:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F64 cinit CODE >581:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F66 cinit CODE >582:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F6A cinit CODE >583:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F6E cinit CODE >584:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F6E cinit CODE >585:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F70 cinit CODE >586:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F74 cinit CODE >587:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F76 cinit CODE >588:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F78 cinit CODE >589:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F7A cinit CODE >593:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F7E cinit CODE >594:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F80 cinit CODE >595:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F80 cinit CODE >596:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F82 cinit CODE >597:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F84 cinit CODE >598:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F86 cinit CODE >601:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F8A cinit CODE >602:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F8C cinit CODE >603:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F8C cinit CODE >604:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F8E cinit CODE >605:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F90 cinit CODE >606:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F92 cinit CODE >612:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F92 cinit CODE >614:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F94 cinit CODE >615:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F96 cinit CODE >617:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F98 cinit CODE >618:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F9A cinit CODE >619:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
-F9C cinit CODE >620:C:\Users\anton\AppData\Local\Temp\xcAs4kk.s
+DFA text0 CODE >77:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+DFA text0 CODE >81:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+DFE text0 CODE >84:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E02 text0 CODE >85:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E06 text0 CODE >86:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E0A text0 CODE >89:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E0C text0 CODE >92:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E10 text0 CODE >93:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E14 text0 CODE >94:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E18 text0 CODE >100:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E1A text0 CODE >101:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E1C text0 CODE >102:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E1E text0 CODE >103:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E20 text0 CODE >105:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E2E text0 CODE >111:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E32 text0 CODE >114:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E34 text0 CODE >117:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E36 text0 CODE >120:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E38 text0 CODE >121:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E40 text0 CODE >125:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E4E text0 CODE >126:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E56 text0 CODE >127:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E5A text0 CODE >128:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+E62 text0 CODE >129:D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+F5A cinit CODE >526:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F5A cinit CODE >528:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F5A cinit CODE >531:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F5A cinit CODE >576:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F5C cinit CODE >577:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F5E cinit CODE >578:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F60 cinit CODE >579:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F62 cinit CODE >580:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F64 cinit CODE >581:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F66 cinit CODE >582:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F6A cinit CODE >583:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F6E cinit CODE >584:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F6E cinit CODE >585:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F70 cinit CODE >586:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F74 cinit CODE >587:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F76 cinit CODE >588:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F78 cinit CODE >589:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F7A cinit CODE >593:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F7E cinit CODE >594:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F80 cinit CODE >595:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F80 cinit CODE >596:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F82 cinit CODE >597:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F84 cinit CODE >598:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F86 cinit CODE >601:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F8A cinit CODE >602:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F8C cinit CODE >603:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F8C cinit CODE >604:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F8E cinit CODE >605:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F90 cinit CODE >606:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F92 cinit CODE >612:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F92 cinit CODE >614:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F94 cinit CODE >615:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F96 cinit CODE >617:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F98 cinit CODE >618:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F9A cinit CODE >619:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
+F9C cinit CODE >620:C:\Users\anton\AppData\Local\Temp\xcAsqjk.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -332,7 +332,7 @@ __Hspace_1 C0 0 ABS 0 - dist/default/production\src.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\src.X.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production\src.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\src.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __size_of_print_binary 0 0 ABS 0 - dist/default/production\src.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\src.X.production.o
 _T1CONbits FCD 0 ABS 0 - dist/default/production\src.X.production.o
@@ -344,13 +344,13 @@ _LATA F89 0 ABS 0 - dist/default/production\src.X.production.o
 _LATB F8A 0 ABS 0 - dist/default/production\src.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\src.X.production.o
 _TMR1 FCE 0 ABS 0 - dist/default/production\src.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+___sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 _hour 40 0 COMRAM 1 bssCOMRAM dist/default/production\src.X.production.o
 _main DFA 0 CODE 0 text0 dist/default/production\src.X.production.o
 _nout 38 0 COMRAM 1 bssCOMRAM dist/default/production\src.X.production.o
 _prec 3C 0 COMRAM 1 bssCOMRAM dist/default/production\src.X.production.o
 btemp 51 0 COMRAM 1 temp dist/default/production\src.X.production.o
-start E 0 CODE 0 init C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+start E 0 CODE 0 init C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\src.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\src.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\src.X.production.o
@@ -365,11 +365,11 @@ ttemp6 55 0 COMRAM 1 temp dist/default/production\src.X.production.o
 ttemp7 59 0 COMRAM 1 temp dist/default/production\src.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\src.X.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\src.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-intlevel0 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-intlevel1 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-intlevel2 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-intlevel3 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+__accesstop 80 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+intlevel0 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+intlevel1 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+intlevel2 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+intlevel3 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\src.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\src.X.production.o
 wtemp8 52 0 COMRAM 1 temp dist/default/production\src.X.production.o
@@ -381,8 +381,8 @@ __pidataCOMRAM 101C 0 CODE 0 idataCOMRAM dist/default/production\src.X.productio
 i2printf@fmt 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\src.X.production.o
 i2printf@ap 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\src.X.production.o
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\src.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\src.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\src.X.production.o
 _milisecond 44 0 COMRAM 1 bssCOMRAM dist/default/production\src.X.production.o
@@ -416,7 +416,7 @@ __pcstackBANK0 A0 0 BANK0 1 cstackBANK0 dist/default/production\src.X.production
 __size_ofi2_printf 0 0 ABS 0 - dist/default/production\src.X.production.o
 _TMR1IF 7CF0 0 ABS 0 - dist/default/production\src.X.production.o
 __end_of_printf FC8 0 CODE 0 text1 dist/default/production\src.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+isa$xinst 0 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __end_ofi2_vfprintf F5A 0 CODE 0 text9 dist/default/production\src.X.production.o
 fputc@fp A3 0 BANK0 1 cstackBANK0 dist/default/production\src.X.production.o
 i2vfprintf@ap 19 0 COMRAM 1 cstackCOMRAM dist/default/production\src.X.production.o
@@ -446,7 +446,7 @@ __Htext8 0 0 ABS 0 text8 dist/default/production\src.X.production.o
 __Htext9 0 0 ABS 0 text9 dist/default/production\src.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\src.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\src.X.production.o
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\src.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\src.X.production.o
 i2_vfpfcnvrt 7B4 0 CODE 0 text10 dist/default/production\src.X.production.o
@@ -543,10 +543,10 @@ __end_of_timer_overflow_interrupt AA2 0 CODE 0 intcode_body dist/default/product
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\src.X.production.o
 _second 4F 0 COMRAM 1 dataCOMRAM dist/default/production\src.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\src.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+isa$std 1 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\src.X.production.o
-stackhi 5FF 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
-stacklo C0 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+stackhi 5FF 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
+stacklo C0 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\src.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\src.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\src.X.production.o
@@ -602,7 +602,7 @@ __Ltext11 0 0 ABS 0 text11 dist/default/production\src.X.production.o
 __Ltext12 0 0 ABS 0 text12 dist/default/production\src.X.production.o
 __Ltext13 0 0 ABS 0 text13 dist/default/production\src.X.production.o
 __Ltext14 0 0 ABS 0 text14 dist/default/production\src.X.production.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
 _vfprintf E72 0 CODE 0 text2 dist/default/production\src.X.production.o
 __Lpowerup E 0 CODE 0 powerup dist/default/production\src.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\src.X.production.o

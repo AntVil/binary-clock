@@ -47,14 +47,14 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"33 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"38 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 [v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
-"72
+"77
 [v _main main `(v  1 e 1 0 ]
-"135
+"140
 [v _putch putch `(v  1 e 1 0 ]
 [v i2_putch putch `(v  1 e 1 0 ]
-"143
+"148
 [v _print_binary print_binary `(v  1 e 1 0 ]
 [s S86 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
@@ -259,18 +259,18 @@
 [v _width width `i  1 s 2 width ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"28 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"33 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 [v _milisecond milisecond `i  1 e 2 0 ]
-"29
+"34
 [v _second second `i  1 e 2 0 ]
-"30
+"35
 [v _minute minute `i  1 e 2 0 ]
-"31
+"36
 [v _hour hour `i  1 e 2 0 ]
-"72
+"77
 [v _main main `(v  1 e 1 0 ]
 {
-"132
+"137
 } 0
 "5 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -313,30 +313,30 @@
 [v fputc@fp fp `*.2S935  1 p 2 3 ]
 "24
 } 0
-"135 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"140 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 0 ]
-"140
+"145
 } 0
-"33
+"38
 [v _timer_overflow_interrupt timer_overflow_interrupt `IIH(v  1 e 1 0 ]
 {
-"70
+"75
 } 0
-"143
+"148
 [v _print_binary print_binary `(v  1 e 1 0 ]
 {
-"148
+"153
 [v print_binary@i i `i  1 a 2 45 ]
-"145
+"150
 [v print_binary@binary binary `[9]uc  1 a 9 36 ]
-"143
+"148
 [v print_binary@num num `i  1 p 2 32 ]
 [v print_binary@F2856 F2856 `[9]uc  1 s 9 F2856 ]
-"161
+"166
 } 0
 "5 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\printf.c
 [v i2_printf printf `(i  1 e 2 0 ]
@@ -379,13 +379,13 @@
 [v i2fputc@fp fp `*.2S935  1 p 2 3 ]
 "24
 } 0
-"135 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
+"140 D:\DHBW\Projects\MPLAB X\binary-clock\src.X\Main.c
 [v i2_putch putch `(v  1 e 1 0 ]
 {
 [v i2putch@data data `uc  1 a 1 wreg ]
 [v i2putch@data data `uc  1 a 1 wreg ]
 [v i2putch@data data `uc  1 a 1 0 ]
-"140
+"145
 } 0
 "7 D:\Applications\Programming\Programming Environments\xc8_compiler\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]

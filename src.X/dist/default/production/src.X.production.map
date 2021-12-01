@@ -6,7 +6,7 @@ Linker command line:
   --edf=D:\Applications\Programming\Programming Environments\xc8_compiler\pic\dat\en_msgs.txt \
   -cn -h+dist/default/production\src.X.production.sym \
   --cmf=dist/default/production\src.X.production.cmf -z -Q18F4520 \
-  -oC:\Users\anton\AppData\Local\Temp\xcAs4kk.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\anton\AppData\Local\Temp\xcAsqjk.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/src.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0C0h-05FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\anton\AppData\Local\Temp\xcAs4kk.o \
+  C:\Users\anton\AppData\Local\Temp\xcAsqjk.o \
   dist/default/production\src.X.production.o 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Machine type is 18F4520
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\anton\AppData\Local\Temp\xcAs4kk.o
+C:\Users\anton\AppData\Local\Temp\xcAsqjk.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
