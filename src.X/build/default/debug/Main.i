@@ -7,6 +7,7 @@
 # 1 "D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Main.c" 2
+# 16 "Main.c"
 # 1 "./Definitions.h" 1
 
 
@@ -4578,41 +4579,235 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
 # 67 "./Definitions.h" 2
-# 1 "Main.c" 2
+# 16 "Main.c" 2
+
+# 1 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\stdio.h" 3
+# 1 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "D:\\Applications\\Programming\\Programming Environments\\xc8_compiler\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
 
 
 
 
 
 
-int hour;
-int minute;
-int second;
+
+char *tempnam(const char *, const char *);
+# 17 "Main.c" 2
+
+
+
+
+
+
+
+
+void print_binary(int num);
+
+
+int milisecond = 0;
+int second = -1;
+int minute = 0;
+int hour = 0;
 
 void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
+
     if(TMR1IF){
+
         TMR1IF = 0;
-        TMR1 = 65535 - 1000 + 18;
+        TMR1 = 65535 - 1000 + 35;
 
-        second++;
-        if(second > 60){
-            second = 0;
-            minute++;
-            if(minute > 60){
-                minute = 0;
-                hour = (hour + 1) % 24;
+
+        milisecond++;
+        if(milisecond >= 1000){
+            milisecond = 0;
+            second++;
+            if(second >= 60){
+                second = 0;
+                minute++;
+                if(minute >= 60){
+                    minute = 0;
+                    hour = (hour + 1) % 24;
+                }
             }
+
+
+            print_binary(hour);
+            printf(":");
+            print_binary(minute);
+            printf(":");
+            print_binary(second);
+            printf("\n");
+
+
+            LATA = (unsigned char)second;
+            LATB = (unsigned char)minute;
+            LATD = (unsigned char)hour;
         }
-
-
     }
-
-    __nop();
 
     return;
 }
 
 void main(void) {
+
+
+
+    ADCON1bits.PCFG = 0b1111;
+
+
+    TRISA = 0;
+    TRISB = 0;
+    TRISD = 0;
+
+
+    TRISCbits.RC0 = 1;
+
+
+    LATA = 0;
+    LATB = 0;
+    LATD = 0;
+
+
+
+
+
+    TRISCbits.RC7 = 1;
+    TRISCbits.RC6 = 1;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.SPEN = 1;
+
+    printf("\n\n");
+
+
+
+
 
     INTCON = 0b11000000;
 
@@ -4620,16 +4815,53 @@ void main(void) {
     PIE1bits.TMR1IE = 1;
 
 
-    T1CON = 0b00000001;
+    T1CONbits.TMR1ON = 1;
 
 
     TMR1IF = 0;
-    TMR1 = 65535 - 1000 + 18;
+    TMR1 = 65535 - 1000 + 35;
 
 
     while(1){
-
+        if(PORTCbits.RC0){
+            milisecond = 0;
+            second = -1;
+            minute = 0;
+            hour = 0;
+        }
     }
+
+
+    T1CONbits.TMR1ON = 0;
+
+    return;
+}
+
+
+void putch(unsigned char data) {
+    while(!PIR1bits.TXIF){
+        continue;
+    }
+    TXREG = data;
+}
+
+
+void print_binary(int num){
+
+    char binary[] = "00000000";
+
+
+    for(int i=0;i<8;i++){
+        if(num % 2 == 1){
+            binary[7 - i] = '1';
+        }else{
+            binary[7 - i] = '0';
+        }
+        num /= 2;
+    }
+
+
+    printf(binary);
 
     return;
 }
