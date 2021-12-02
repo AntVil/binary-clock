@@ -4720,15 +4720,19 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 22 "Main.c" 2
-# 31 "Main.c"
+# 33 "Main.c"
 void print_binary(int num);
 void output(void);
 
 
+
 int milisecond = 0;
-int second = 0;
+int second = -1;
 int minute = 0;
 int hour = 0;
+
+
+
 
 void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
 
@@ -4736,7 +4740,7 @@ void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(v
 
         TMR1IF = 0;
         TMR1 = 65535 - 1000 + 35;
-        __nop();
+
 
         milisecond++;
         if(milisecond >= 1000){
@@ -4759,6 +4763,7 @@ void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(v
     return;
 }
 
+
 void main(void) {
 
 
@@ -4777,7 +4782,6 @@ void main(void) {
     TRISCbits.RC2 = 1;
     TRISCbits.RC3 = 1;
     TRISCbits.RC4 = 1;
-
 
 
     LATA = 0;
@@ -4812,13 +4816,17 @@ void main(void) {
     TMR1 = 65535 - 1000 + 35;
 
 
+
+
+
     while(1){
         if(PORTCbits.RC0){
 
             milisecond = 0;
-            second = 0;
+            second = -1;
             minute = 0;
             hour = 0;
+
         }else if(PORTCbits.RC1){
 
             T1CONbits.TMR1ON = 0;
@@ -4829,6 +4837,7 @@ void main(void) {
             }
             TMR1 = 65535 - 1000 + 35;
             T1CONbits.TMR1ON = 1;
+
         }else if(PORTCbits.RC2){
 
             T1CONbits.TMR1ON = 0;
@@ -4839,6 +4848,7 @@ void main(void) {
             }
             TMR1 = 65535 - 1000 + 35;
             T1CONbits.TMR1ON = 1;
+
         }else if(PORTCbits.RC3){
 
             T1CONbits.TMR1ON = 0;
@@ -4849,6 +4859,7 @@ void main(void) {
             }
             TMR1 = 65535 - 1000 + 35;
             T1CONbits.TMR1ON = 1;
+
         }else if(PORTCbits.RC4){
 
             T1CONbits.TMR1ON = 0;
@@ -4869,12 +4880,16 @@ void main(void) {
 }
 
 
+
 void putch(unsigned char data) {
     while(!PIR1bits.TXIF){
         continue;
     }
     TXREG = data;
+
+    return;
 }
+
 
 
 void print_binary(int num){
@@ -4896,6 +4911,7 @@ void print_binary(int num){
 
     return;
 }
+
 
 void output(void){
 
