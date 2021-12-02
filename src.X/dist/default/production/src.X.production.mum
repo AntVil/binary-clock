@@ -1,6 +1,6 @@
 
 Memory Summary:
-    Program space        used   E8Dh (  3725) of  8000h bytes   ( 11.4%)
+    Program space        used   EA1h (  3745) of  8000h bytes   ( 11.4%)
     Data space           used    A2h (   162) of   600h bytes   ( 10.5%)
     Configuration bits   used     7h (     7) of     7h words   (100.0%)
     EEPROM space         used     0h (     0) of   100h bytes   (  0.0%)

@@ -7,11 +7,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5633
 [; ;D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
-"50 D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"32 Main.c
-[; ;Main.c: 32: void output(void);
+"34 Main.c
+[; ;Main.c: 34: void output(void);
 [v _output `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "4696 D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h
@@ -692,258 +689,217 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;D:/Applications/Programming/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"35 Main.c
-[; ;Main.c: 35: int milisecond = 0;
+"38 Main.c
+[; ;Main.c: 38: int milisecond = 0;
 [v _milisecond `i ~T0 @X0 1 e ]
 [i _milisecond
 -> 0 `i
 ]
-"36
-[; ;Main.c: 36: int second = 0;
+"39
+[; ;Main.c: 39: int second = -1;
 [v _second `i ~T0 @X0 1 e ]
 [i _second
--> 0 `i
+-U -> 1 `i
 ]
-"37
-[; ;Main.c: 37: int minute = 0;
+"40
+[; ;Main.c: 40: int minute = 0;
 [v _minute `i ~T0 @X0 1 e ]
 [i _minute
 -> 0 `i
 ]
-"38
-[; ;Main.c: 38: int hour = 0;
+"41
+[; ;Main.c: 41: int hour = 0;
 [v _hour `i ~T0 @X0 1 e ]
 [i _hour
 -> 0 `i
 ]
 [v $root$_timer_overflow_interrupt `(v ~T0 @X0 0 e ]
-"40
-[; ;Main.c: 40: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
+"46
+[; ;Main.c: 46: void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(void){
 [v _timer_overflow_interrupt `(v ~T41 @X0 1 ef ]
 {
 [e :U _timer_overflow_interrupt ]
 [f ]
-"42
-[; ;Main.c: 42:     if(TMR1IF){
+"48
+[; ;Main.c: 48:     if(TMR1IF){
 [e $ ! _TMR1IF 284  ]
 {
-"44
-[; ;Main.c: 44:         TMR1IF = 0;
+"50
+[; ;Main.c: 50:         TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"45
-[; ;Main.c: 45:         TMR1 = 65535 - 1000 + 35;
+"51
+[; ;Main.c: 51:         TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"46
-[; ;Main.c: 46:         __nop();
-[e ( ___nop ..  ]
-"48
-[; ;Main.c: 48:         milisecond++;
+"54
+[; ;Main.c: 54:         milisecond++;
 [e ++ _milisecond -> 1 `i ]
-"49
-[; ;Main.c: 49:         if(milisecond >= 1000){
+"55
+[; ;Main.c: 55:         if(milisecond >= 1000){
 [e $ ! >= _milisecond -> 1000 `i 285  ]
 {
-"50
-[; ;Main.c: 50:             milisecond = 0;
+"56
+[; ;Main.c: 56:             milisecond = 0;
 [e = _milisecond -> 0 `i ]
-"51
-[; ;Main.c: 51:             second++;
+"57
+[; ;Main.c: 57:             second++;
 [e ++ _second -> 1 `i ]
-"52
-[; ;Main.c: 52:             if(second >= 60){
+"58
+[; ;Main.c: 58:             if(second >= 60){
 [e $ ! >= _second -> 60 `i 286  ]
 {
-"53
-[; ;Main.c: 53:                 second = 0;
+"59
+[; ;Main.c: 59:                 second = 0;
 [e = _second -> 0 `i ]
-"54
-[; ;Main.c: 54:                 minute++;
+"60
+[; ;Main.c: 60:                 minute++;
 [e ++ _minute -> 1 `i ]
-"55
-[; ;Main.c: 55:                 if(minute >= 60){
+"61
+[; ;Main.c: 61:                 if(minute >= 60){
 [e $ ! >= _minute -> 60 `i 287  ]
 {
-"56
-[; ;Main.c: 56:                     minute = 0;
+"62
+[; ;Main.c: 62:                     minute = 0;
 [e = _minute -> 0 `i ]
-"57
-[; ;Main.c: 57:                     hour = (hour + 1) % 24;
+"63
+[; ;Main.c: 63:                     hour = (hour + 1) % 24;
 [e = _hour % + _hour -> 1 `i -> 24 `i ]
-"58
-[; ;Main.c: 58:                 }
+"64
+[; ;Main.c: 64:                 }
 }
 [e :U 287 ]
-"59
-[; ;Main.c: 59:             }
+"65
+[; ;Main.c: 65:             }
 }
 [e :U 286 ]
-"62
-[; ;Main.c: 62:             output();
+"68
+[; ;Main.c: 68:             output();
 [e ( _output ..  ]
-"63
-[; ;Main.c: 63:         }
+"69
+[; ;Main.c: 69:         }
 }
 [e :U 285 ]
-"64
-[; ;Main.c: 64:     }
+"70
+[; ;Main.c: 70:     }
 }
 [e :U 284 ]
-"66
-[; ;Main.c: 66:     return;
+"72
+[; ;Main.c: 72:     return;
 [e $UE 283  ]
-"67
-[; ;Main.c: 67: }
+"73
+[; ;Main.c: 73: }
 [e :UE 283 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"69
-[; ;Main.c: 69: void main(void) {
+"76
+[; ;Main.c: 76: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"73
-[; ;Main.c: 73:     ADCON1bits.PCFG = 0b1111;
+"80
+[; ;Main.c: 80:     ADCON1bits.PCFG = 0b1111;
 [e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-"76
-[; ;Main.c: 76:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"77
-[; ;Main.c: 77:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"78
-[; ;Main.c: 78:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"81
-[; ;Main.c: 81:     TRISCbits.RC0 = 1;
-[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
 "83
-[; ;Main.c: 83:     TRISCbits.RC1 = 1;
-[e = . . _TRISCbits 1 1 -> -> 1 `i `uc ]
+[; ;Main.c: 83:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "84
-[; ;Main.c: 84:     TRISCbits.RC2 = 1;
-[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
+[; ;Main.c: 84:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "85
-[; ;Main.c: 85:     TRISCbits.RC3 = 1;
-[e = . . _TRISCbits 1 3 -> -> 1 `i `uc ]
-"86
-[; ;Main.c: 86:     TRISCbits.RC4 = 1;
-[e = . . _TRISCbits 1 4 -> -> 1 `i `uc ]
+[; ;Main.c: 85:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"88
+[; ;Main.c: 88:     TRISCbits.RC0 = 1;
+[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
 "90
-[; ;Main.c: 90:     LATA = 0;
-[e = _LATA -> -> 0 `i `uc ]
+[; ;Main.c: 90:     TRISCbits.RC1 = 1;
+[e = . . _TRISCbits 1 1 -> -> 1 `i `uc ]
 "91
-[; ;Main.c: 91:     LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
+[; ;Main.c: 91:     TRISCbits.RC2 = 1;
+[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
 "92
-[; ;Main.c: 92:     LATD = 0;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;Main.c: 92:     TRISCbits.RC3 = 1;
+[e = . . _TRISCbits 1 3 -> -> 1 `i `uc ]
+"93
+[; ;Main.c: 93:     TRISCbits.RC4 = 1;
+[e = . . _TRISCbits 1 4 -> -> 1 `i `uc ]
+"96
+[; ;Main.c: 96:     LATA = 0;
+[e = _LATA -> -> 0 `i `uc ]
+"97
+[; ;Main.c: 97:     LATB = 0;
+[e = _LATB -> -> 0 `i `uc ]
 "98
-[; ;Main.c: 98:     TRISCbits.RC7 = 1;
+[; ;Main.c: 98:     LATD = 0;
+[e = _LATD -> -> 0 `i `uc ]
+"104
+[; ;Main.c: 104:     TRISCbits.RC7 = 1;
 [e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-"99
-[; ;Main.c: 99:     TRISCbits.RC6 = 1;
+"105
+[; ;Main.c: 105:     TRISCbits.RC6 = 1;
 [e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-"100
-[; ;Main.c: 100:     TXSTAbits.TXEN = 1;
+"106
+[; ;Main.c: 106:     TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"101
-[; ;Main.c: 101:     RCSTAbits.SPEN = 1;
+"107
+[; ;Main.c: 107:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"103
-[; ;Main.c: 103:     printf("\n\n");
-[e ( _printf :s 1C ]
 "109
-[; ;Main.c: 109:     INTCON = 0b11000000;
-[e = _INTCON -> -> 192 `i `uc ]
-"112
-[; ;Main.c: 112:     PIE1bits.TMR1IE = 1;
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 109:     printf("\n\n");
+[e ( _printf :s 1C ]
 "115
-[; ;Main.c: 115:     T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;Main.c: 115:     INTCON = 0b11000000;
+[e = _INTCON -> -> 192 `i `uc ]
 "118
-[; ;Main.c: 118:     TMR1IF = 0;
+[; ;Main.c: 118:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"121
+[; ;Main.c: 121:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"124
+[; ;Main.c: 124:     TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"119
-[; ;Main.c: 119:     TMR1 = 65535 - 1000 + 35;
+"125
+[; ;Main.c: 125:     TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"122
-[; ;Main.c: 122:     while(1){
+"131
+[; ;Main.c: 131:     while(1){
 [e :U 290 ]
 {
-"123
-[; ;Main.c: 123:         if(PORTCbits.RC0){
+"132
+[; ;Main.c: 132:         if(PORTCbits.RC0){
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 292  ]
 {
-"125
-[; ;Main.c: 125:             milisecond = 0;
+"134
+[; ;Main.c: 134:             milisecond = 0;
 [e = _milisecond -> 0 `i ]
-"126
-[; ;Main.c: 126:             second = 0;
-[e = _second -> 0 `i ]
-"127
-[; ;Main.c: 127:             minute = 0;
+"135
+[; ;Main.c: 135:             second = -1;
+[e = _second -U -> 1 `i ]
+"136
+[; ;Main.c: 136:             minute = 0;
 [e = _minute -> 0 `i ]
-"128
-[; ;Main.c: 128:             hour = 0;
+"137
+[; ;Main.c: 137:             hour = 0;
 [e = _hour -> 0 `i ]
-"129
-[; ;Main.c: 129:         }else if(PORTCbits.RC1){
+"139
+[; ;Main.c: 139:         }else if(PORTCbits.RC1){
 }
 [e $U 293  ]
 [e :U 292 ]
 [e $ ! != -> . . _PORTCbits 0 1 `i -> 0 `i 294  ]
 {
-"131
-[; ;Main.c: 131:             T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"132
-[; ;Main.c: 132:             while(PORTCbits.RC1){
-[e $U 295  ]
-[e :U 296 ]
-{
-"133
-[; ;Main.c: 133:                 minute = (minute + 59) % 60;
-[e = _minute % + _minute -> 59 `i -> 60 `i ]
-"134
-[; ;Main.c: 134:                 output();
-[e ( _output ..  ]
-"135
-[; ;Main.c: 135:                 _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"136
-[; ;Main.c: 136:             }
-}
-[e :U 295 ]
-"132
-[; ;Main.c: 132:             while(PORTCbits.RC1){
-[e $ != -> . . _PORTCbits 0 1 `i -> 0 `i 296  ]
-[e :U 297 ]
-"137
-[; ;Main.c: 137:             TMR1 = 65535 - 1000 + 35;
-[e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"138
-[; ;Main.c: 138:             T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"139
-[; ;Main.c: 139:         }else if(PORTCbits.RC2){
-}
-[e $U 298  ]
-[e :U 294 ]
-[e $ ! != -> . . _PORTCbits 0 2 `i -> 0 `i 299  ]
-{
 "141
 [; ;Main.c: 141:             T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
 "142
-[; ;Main.c: 142:             while(PORTCbits.RC2){
-[e $U 300  ]
-[e :U 301 ]
+[; ;Main.c: 142:             while(PORTCbits.RC1){
+[e $U 295  ]
+[e :U 296 ]
 {
 "143
-[; ;Main.c: 143:                 minute = (minute + 1) % 60;
-[e = _minute % + _minute -> 1 `i -> 60 `i ]
+[; ;Main.c: 143:                 minute = (minute + 59) % 60;
+[e = _minute % + _minute -> 59 `i -> 60 `i ]
 "144
 [; ;Main.c: 144:                 output();
 [e ( _output ..  ]
@@ -953,149 +909,190 @@ Version 4.0 HI-TECH Software Intermediate Code
 "146
 [; ;Main.c: 146:             }
 }
-[e :U 300 ]
+[e :U 295 ]
 "142
-[; ;Main.c: 142:             while(PORTCbits.RC2){
-[e $ != -> . . _PORTCbits 0 2 `i -> 0 `i 301  ]
-[e :U 302 ]
+[; ;Main.c: 142:             while(PORTCbits.RC1){
+[e $ != -> . . _PORTCbits 0 1 `i -> 0 `i 296  ]
+[e :U 297 ]
 "147
 [; ;Main.c: 147:             TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
 "148
 [; ;Main.c: 148:             T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"149
-[; ;Main.c: 149:         }else if(PORTCbits.RC3){
+"150
+[; ;Main.c: 150:         }else if(PORTCbits.RC2){
+}
+[e $U 298  ]
+[e :U 294 ]
+[e $ ! != -> . . _PORTCbits 0 2 `i -> 0 `i 299  ]
+{
+"152
+[; ;Main.c: 152:             T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+"153
+[; ;Main.c: 153:             while(PORTCbits.RC2){
+[e $U 300  ]
+[e :U 301 ]
+{
+"154
+[; ;Main.c: 154:                 minute = (minute + 1) % 60;
+[e = _minute % + _minute -> 1 `i -> 60 `i ]
+"155
+[; ;Main.c: 155:                 output();
+[e ( _output ..  ]
+"156
+[; ;Main.c: 156:                 _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"157
+[; ;Main.c: 157:             }
+}
+[e :U 300 ]
+"153
+[; ;Main.c: 153:             while(PORTCbits.RC2){
+[e $ != -> . . _PORTCbits 0 2 `i -> 0 `i 301  ]
+[e :U 302 ]
+"158
+[; ;Main.c: 158:             TMR1 = 65535 - 1000 + 35;
+[e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
+"159
+[; ;Main.c: 159:             T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"161
+[; ;Main.c: 161:         }else if(PORTCbits.RC3){
 }
 [e $U 303  ]
 [e :U 299 ]
 [e $ ! != -> . . _PORTCbits 0 3 `i -> 0 `i 304  ]
 {
-"151
-[; ;Main.c: 151:             T1CONbits.TMR1ON = 0;
+"163
+[; ;Main.c: 163:             T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"152
-[; ;Main.c: 152:             while(PORTCbits.RC3){
+"164
+[; ;Main.c: 164:             while(PORTCbits.RC3){
 [e $U 305  ]
 [e :U 306 ]
 {
-"153
-[; ;Main.c: 153:                 hour = (hour + 23) % 24;
+"165
+[; ;Main.c: 165:                 hour = (hour + 23) % 24;
 [e = _hour % + _hour -> 23 `i -> 24 `i ]
-"154
-[; ;Main.c: 154:                 output();
+"166
+[; ;Main.c: 166:                 output();
 [e ( _output ..  ]
-"155
-[; ;Main.c: 155:                 _delay((unsigned long)((500)*(4000000/4000.0)));
+"167
+[; ;Main.c: 167:                 _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"156
-[; ;Main.c: 156:             }
+"168
+[; ;Main.c: 168:             }
 }
 [e :U 305 ]
-"152
-[; ;Main.c: 152:             while(PORTCbits.RC3){
+"164
+[; ;Main.c: 164:             while(PORTCbits.RC3){
 [e $ != -> . . _PORTCbits 0 3 `i -> 0 `i 306  ]
 [e :U 307 ]
-"157
-[; ;Main.c: 157:             TMR1 = 65535 - 1000 + 35;
+"169
+[; ;Main.c: 169:             TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"158
-[; ;Main.c: 158:             T1CONbits.TMR1ON = 1;
+"170
+[; ;Main.c: 170:             T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"159
-[; ;Main.c: 159:         }else if(PORTCbits.RC4){
+"172
+[; ;Main.c: 172:         }else if(PORTCbits.RC4){
 }
 [e $U 308  ]
 [e :U 304 ]
 [e $ ! != -> . . _PORTCbits 0 4 `i -> 0 `i 309  ]
 {
-"161
-[; ;Main.c: 161:             T1CONbits.TMR1ON = 0;
+"174
+[; ;Main.c: 174:             T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"162
-[; ;Main.c: 162:             while(PORTCbits.RC4){
+"175
+[; ;Main.c: 175:             while(PORTCbits.RC4){
 [e $U 310  ]
 [e :U 311 ]
 {
-"163
-[; ;Main.c: 163:                 hour = (hour + 1) % 24;
+"176
+[; ;Main.c: 176:                 hour = (hour + 1) % 24;
 [e = _hour % + _hour -> 1 `i -> 24 `i ]
-"164
-[; ;Main.c: 164:                 output();
+"177
+[; ;Main.c: 177:                 output();
 [e ( _output ..  ]
-"165
-[; ;Main.c: 165:                 _delay((unsigned long)((500)*(4000000/4000.0)));
+"178
+[; ;Main.c: 178:                 _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"166
-[; ;Main.c: 166:             }
+"179
+[; ;Main.c: 179:             }
 }
 [e :U 310 ]
-"162
-[; ;Main.c: 162:             while(PORTCbits.RC4){
+"175
+[; ;Main.c: 175:             while(PORTCbits.RC4){
 [e $ != -> . . _PORTCbits 0 4 `i -> 0 `i 311  ]
 [e :U 312 ]
-"167
-[; ;Main.c: 167:             TMR1 = 65535 - 1000 + 35;
+"180
+[; ;Main.c: 180:             TMR1 = 65535 - 1000 + 35;
 [e = _TMR1 -> + - -> 65535 `l -> -> 1000 `i `l -> -> 35 `i `l `us ]
-"168
-[; ;Main.c: 168:             T1CONbits.TMR1ON = 1;
+"181
+[; ;Main.c: 181:             T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"169
-[; ;Main.c: 169:         }
+"182
+[; ;Main.c: 182:         }
 }
 [e :U 309 ]
 [e :U 308 ]
 [e :U 303 ]
 [e :U 298 ]
 [e :U 293 ]
-"170
-[; ;Main.c: 170:     }
+"183
+[; ;Main.c: 183:     }
 }
 [e :U 289 ]
 [e $U 290  ]
 [e :U 291 ]
-"173
-[; ;Main.c: 173:     T1CONbits.TMR1ON = 0;
+"186
+[; ;Main.c: 186:     T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"175
-[; ;Main.c: 175:     return;
+"188
+[; ;Main.c: 188:     return;
 [e $UE 288  ]
-"176
-[; ;Main.c: 176: }
+"189
+[; ;Main.c: 189: }
 [e :UE 288 ]
 }
-"179
-[; ;Main.c: 179: void putch(unsigned char data) {
+"193
+[; ;Main.c: 193: void putch(unsigned char data) {
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"180
-[; ;Main.c: 180:     while(!PIR1bits.TXIF){
+"194
+[; ;Main.c: 194:     while(!PIR1bits.TXIF){
 [e $U 314  ]
 [e :U 315 ]
 {
-"181
-[; ;Main.c: 181:         continue;
+"195
+[; ;Main.c: 195:         continue;
 [e $U 314  ]
-"182
-[; ;Main.c: 182:     }
+"196
+[; ;Main.c: 196:     }
 }
 [e :U 314 ]
-"180
-[; ;Main.c: 180:     while(!PIR1bits.TXIF){
+"194
+[; ;Main.c: 194:     while(!PIR1bits.TXIF){
 [e $ ! != -> . . _PIR1bits 0 4 `i -> 0 `i 315  ]
 [e :U 316 ]
-"183
-[; ;Main.c: 183:     TXREG = data;
+"197
+[; ;Main.c: 197:     TXREG = data;
 [e = _TXREG _data ]
-"184
-[; ;Main.c: 184: }
+"199
+[; ;Main.c: 199:     return;
+[e $UE 313  ]
+"200
+[; ;Main.c: 200: }
 [e :UE 313 ]
 }
-"187
-[; ;Main.c: 187: void print_binary(int num){
+"204
+[; ;Main.c: 204: void print_binary(int num){
 [v _print_binary `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _print_binary ]
@@ -1104,8 +1101,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F2857 `uc ~T0 @X0 -> 9 `i s ]
 [i F2857
 :U ..
-"189
-[; ;Main.c: 189:     char binary[] = "00000000";
+"206
+[; ;Main.c: 206:     char binary[] = "00000000";
 -> 48 `c
 -> 48 `c
 -> 48 `c
@@ -1119,8 +1116,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _binary `uc ~T0 @X0 -> 9 `i a ]
 [e = _binary F2857 ]
-"192
-[; ;Main.c: 192:     for(int i=0;i<8;i++){
+"209
+[; ;Main.c: 209:     for(int i=0;i<8;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1128,84 +1125,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 319  ]
 [e :U 318 ]
 {
-"193
-[; ;Main.c: 193:         if(num % 2 == 1){
+"210
+[; ;Main.c: 210:         if(num % 2 == 1){
 [e $ ! == % _num -> 2 `i -> 1 `i 321  ]
 {
-"194
-[; ;Main.c: 194:             binary[7 - i] = '1';
+"211
+[; ;Main.c: 211:             binary[7 - i] = '1';
 [e = *U + &U _binary * -> -> - -> 7 `i _i `ui `ux -> -> # *U &U _binary `ui `ux -> -> 49 `ui `uc ]
-"195
-[; ;Main.c: 195:         }else{
+"212
+[; ;Main.c: 212:         }else{
 }
 [e $U 322  ]
 [e :U 321 ]
 {
-"196
-[; ;Main.c: 196:             binary[7 - i] = '0';
+"213
+[; ;Main.c: 213:             binary[7 - i] = '0';
 [e = *U + &U _binary * -> -> - -> 7 `i _i `ui `ux -> -> # *U &U _binary `ui `ux -> -> 48 `ui `uc ]
-"197
-[; ;Main.c: 197:         }
+"214
+[; ;Main.c: 214:         }
 }
 [e :U 322 ]
-"198
-[; ;Main.c: 198:         num /= 2;
+"215
+[; ;Main.c: 215:         num /= 2;
 [e =/ _num -> 2 `i ]
-"199
-[; ;Main.c: 199:     }
+"216
+[; ;Main.c: 216:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 318  ]
 [e :U 319 ]
 }
-"202
-[; ;Main.c: 202:     printf(binary);
+"219
+[; ;Main.c: 219:     printf(binary);
 [e ( _printf -> &U _binary `*Cuc ]
-"204
-[; ;Main.c: 204:     return;
+"221
+[; ;Main.c: 221:     return;
 [e $UE 317  ]
-"205
-[; ;Main.c: 205: }
+"222
+[; ;Main.c: 222: }
 [e :UE 317 ]
 }
-"207
-[; ;Main.c: 207: void output(void){
+"225
+[; ;Main.c: 225: void output(void){
 [v _output `(v ~T0 @X0 1 ef ]
 {
 [e :U _output ]
 [f ]
-"209
-[; ;Main.c: 209:     print_binary(hour);
+"227
+[; ;Main.c: 227:     print_binary(hour);
 [e ( _print_binary (1 _hour ]
-"210
-[; ;Main.c: 210:     printf(":");
+"228
+[; ;Main.c: 228:     printf(":");
 [e ( _printf :s 2C ]
-"211
-[; ;Main.c: 211:     print_binary(minute);
+"229
+[; ;Main.c: 229:     print_binary(minute);
 [e ( _print_binary (1 _minute ]
-"212
-[; ;Main.c: 212:     printf(":");
+"230
+[; ;Main.c: 230:     printf(":");
 [e ( _printf :s 3C ]
-"213
-[; ;Main.c: 213:     print_binary(second);
+"231
+[; ;Main.c: 231:     print_binary(second);
 [e ( _print_binary (1 _second ]
-"214
-[; ;Main.c: 214:     printf("\n");
+"232
+[; ;Main.c: 232:     printf("\n");
 [e ( _printf :s 4C ]
-"217
-[; ;Main.c: 217:     LATA = (unsigned char)second;
+"235
+[; ;Main.c: 235:     LATA = (unsigned char)second;
 [e = _LATA -> _second `uc ]
-"218
-[; ;Main.c: 218:     LATB = (unsigned char)minute;
+"236
+[; ;Main.c: 236:     LATB = (unsigned char)minute;
 [e = _LATB -> _minute `uc ]
-"219
-[; ;Main.c: 219:     LATD = (unsigned char)hour;
+"237
+[; ;Main.c: 237:     LATD = (unsigned char)hour;
 [e = _LATD -> _hour `uc ]
-"221
-[; ;Main.c: 221:     return;
+"239
+[; ;Main.c: 239:     return;
 [e $UE 323  ]
-"222
-[; ;Main.c: 222: }
+"240
+[; ;Main.c: 240: }
 [e :UE 323 ]
 }
 [p f _printf 9437696 ]

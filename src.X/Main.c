@@ -21,21 +21,27 @@ DESCRIPTION:
 #include "Definitions.h"
 #include <stdio.h>
 
+
 // constants
 #define TIMER_1_MAX_VALUE  65535 // us
 #define ONE_MILISECOND      1000 // us
 #define TIMER_1_CORRECTION    35 // us
 #define BUTTON_DELAY         500 // ms
 
+
 // subroutine definitions
 void print_binary(int num);
 void output(void);
 
+
 // global variables
 int milisecond = 0;
-int second = 0;
+int second = -1; // ticks to 0 (instead of 1)
 int minute = 0;
 int hour = 0;
+
+
+/* -=-=-=-=-=-=- INTERRUPT -=-=-=-=-=-=- */
 
 void __interrupt(high_priority) timer_overflow_interrupt(void){
     // check for timer-1 interrupt flag
@@ -43,7 +49,7 @@ void __interrupt(high_priority) timer_overflow_interrupt(void){
         // reset timer-1
         TMR1IF = 0;
         TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
-        Nop();
+        
         // increase time (handels overflows too)
         milisecond++;
         if(milisecond >= 1000){
@@ -66,27 +72,27 @@ void __interrupt(high_priority) timer_overflow_interrupt(void){
     return;
 }
 
+
 void main(void) {
-    /* -=-=-=-=-=-=- PORT RELATED IO -=-=-=-=-=-=- */
+    /* -=-=-=-=-=-=- PIN/LED RELATED IO -=-=-=-=-=-=- */
     
     // make PORTA digital (default analog)
     ADCON1bits.PCFG = 0b1111;
     
     // define clock outputs
-    TRISA = 0;
-    TRISB = 0;
-    TRISD = 0;
+    TRISA = 0; // sec
+    TRISB = 0; // min
+    TRISD = 0; // hr
     
     // define reset button as input
     TRISCbits.RC0 = 1;
     // define edit buttons as input
-    TRISCbits.RC1 = 1;//m-
-    TRISCbits.RC2 = 1;//m+
-    TRISCbits.RC3 = 1;//h-
-    TRISCbits.RC4 = 1;//h+
+    TRISCbits.RC1 = 1; // min-
+    TRISCbits.RC2 = 1; // min+
+    TRISCbits.RC3 = 1; // hr-
+    TRISCbits.RC4 = 1; // hr+
     
-    
-    // turn off all leds
+    // turn off all pins/leds
     LATA = 0;
     LATB = 0;
     LATD = 0;
@@ -117,17 +123,21 @@ void main(void) {
     // reset timer
     TMR1IF = 0;
     TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
+    
+    
+    /* -=-=-=-=-=-=- LOOP -=-=-=-=-=-=- */
 
     // polling for buttons
     while(1){
         if(PORTCbits.RC0){
             // reset clock
             milisecond = 0;
-            second = 0;
+            second = -1; // ticks to 0 (instead of 1)
             minute = 0;
             hour = 0;
+            
         }else if(PORTCbits.RC1){
-            // decrement minute
+            // decrement minute (deactivate timer-1 meanwhile)
             T1CONbits.TMR1ON = 0;
             while(PORTCbits.RC1){
                 minute = (minute + 59) % 60;
@@ -136,8 +146,9 @@ void main(void) {
             }
             TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
             T1CONbits.TMR1ON = 1;
+            
         }else if(PORTCbits.RC2){
-            // increment minute
+            // increment minute (deactivate timer-1 meanwhile)
             T1CONbits.TMR1ON = 0;
             while(PORTCbits.RC2){
                 minute = (minute + 1) % 60;
@@ -146,8 +157,9 @@ void main(void) {
             }
             TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
             T1CONbits.TMR1ON = 1;
+            
         }else if(PORTCbits.RC3){
-            // decrement hour
+            // decrement hour (deactivate timer-1 meanwhile)
             T1CONbits.TMR1ON = 0;
             while(PORTCbits.RC3){
                 hour = (hour + 23) % 24;
@@ -156,8 +168,9 @@ void main(void) {
             }
             TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
             T1CONbits.TMR1ON = 1;
+            
         }else if(PORTCbits.RC4){
-            // increment hour
+            // increment hour (deactivate timer-1 meanwhile)
             T1CONbits.TMR1ON = 0;
             while(PORTCbits.RC4){
                 hour = (hour + 1) % 24;
@@ -169,11 +182,12 @@ void main(void) {
         }
     }
     
-    // turn of timer-1 (actually never called)
+    // turn of timer-1 (good practice)
     T1CONbits.TMR1ON = 0;
     
     return;
 }
+
 
 // used for printf
 void putch(unsigned char data) {
@@ -181,7 +195,10 @@ void putch(unsigned char data) {
         continue;
     }
     TXREG = data;
+    
+    return;
 }
+
 
 // used to print integer as binary number
 void print_binary(int num){
@@ -204,6 +221,7 @@ void print_binary(int num){
     return;
 }
 
+
 void output(void){
     // output clock on console
     print_binary(hour);
@@ -213,7 +231,7 @@ void output(void){
     print_binary(second);
     printf("\n");
 
-    // output clock on pins
+    // output clock on pins/leds
     LATA = (unsigned char)second;
     LATB = (unsigned char)minute;
     LATD = (unsigned char)hour;
