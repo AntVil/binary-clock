@@ -22,16 +22,18 @@ DESCRIPTION:
 #include <stdio.h>
 
 // constants
-#define TIMER_1_MAX_VALUE  65535
-#define ONE_MILISECOND      1000
-#define TIMER_1_CORRECTION    35
+#define TIMER_1_MAX_VALUE  65535 // us
+#define ONE_MILISECOND      1000 // us
+#define TIMER_1_CORRECTION    35 // us
+#define BUTTON_DELAY         500 // ms
 
 // subroutine definitions
 void print_binary(int num);
+void output(void);
 
 // global variables
 int milisecond = 0;
-int second = -1;
+int second = 0;
 int minute = 0;
 int hour = 0;
 
@@ -41,7 +43,7 @@ void __interrupt(high_priority) timer_overflow_interrupt(void){
         // reset timer-1
         TMR1IF = 0;
         TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
-        
+        Nop();
         // increase time (handels overflows too)
         milisecond++;
         if(milisecond >= 1000){
@@ -56,18 +58,8 @@ void __interrupt(high_priority) timer_overflow_interrupt(void){
                 }
             }
             
-            // print clock to console every second
-            print_binary(hour);
-            printf(":");
-            print_binary(minute);
-            printf(":");
-            print_binary(second);
-            printf("\n");
-            
-            // output clock on pins every second
-            LATA = (unsigned char)second;
-            LATB = (unsigned char)minute;
-            LATD = (unsigned char)hour;
+            // display result every second
+            output();
         }
     }
 
@@ -87,6 +79,12 @@ void main(void) {
     
     // define reset button as input
     TRISCbits.RC0 = 1;
+    // define edit buttons as input
+    TRISCbits.RC1 = 1;//m-
+    TRISCbits.RC2 = 1;//m+
+    TRISCbits.RC3 = 1;//h-
+    TRISCbits.RC4 = 1;//h+
+    
     
     // turn off all leds
     LATA = 0;
@@ -120,13 +118,54 @@ void main(void) {
     TMR1IF = 0;
     TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
 
-    // polling for reset
+    // polling for buttons
     while(1){
         if(PORTCbits.RC0){
+            // reset clock
             milisecond = 0;
-            second = -1;
+            second = 0;
             minute = 0;
             hour = 0;
+        }else if(PORTCbits.RC1){
+            // decrement minute
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC1){
+                minute = (minute + 59) % 60;
+                output();
+                __delay_ms(BUTTON_DELAY);
+            }
+            TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC2){
+            // increment minute
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC2){
+                minute = (minute + 1) % 60;
+                output();
+                __delay_ms(BUTTON_DELAY);
+            }
+            TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC3){
+            // decrement hour
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC3){
+                hour = (hour + 23) % 24;
+                output();
+                __delay_ms(BUTTON_DELAY);
+            }
+            TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC4){
+            // increment hour
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC4){
+                hour = (hour + 1) % 24;
+                output();
+                __delay_ms(BUTTON_DELAY);
+            }
+            TMR1 = TIMER_1_MAX_VALUE - ONE_MILISECOND + TIMER_1_CORRECTION;
+            T1CONbits.TMR1ON = 1;
         }
     }
     
@@ -161,6 +200,23 @@ void print_binary(int num){
     
     // output to console
     printf(binary);
+    
+    return;
+}
+
+void output(void){
+    // output clock on console
+    print_binary(hour);
+    printf(":");
+    print_binary(minute);
+    printf(":");
+    print_binary(second);
+    printf("\n");
+
+    // output clock on pins
+    LATA = (unsigned char)second;
+    LATB = (unsigned char)minute;
+    LATD = (unsigned char)hour;
     
     return;
 }

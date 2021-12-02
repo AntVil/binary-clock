@@ -4720,19 +4720,13 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 22 "Main.c" 2
-
-
-
-
-
-
-
-
+# 31 "Main.c"
 void print_binary(int num);
+void output(void);
 
 
 int milisecond = 0;
-int second = -1;
+int second = 0;
 int minute = 0;
 int hour = 0;
 
@@ -4742,7 +4736,7 @@ void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(v
 
         TMR1IF = 0;
         TMR1 = 65535 - 1000 + 35;
-
+        __nop();
 
         milisecond++;
         if(milisecond >= 1000){
@@ -4758,17 +4752,7 @@ void __attribute__((picinterrupt(("high_priority")))) timer_overflow_interrupt(v
             }
 
 
-            print_binary(hour);
-            printf(":");
-            print_binary(minute);
-            printf(":");
-            print_binary(second);
-            printf("\n");
-
-
-            LATA = (unsigned char)second;
-            LATB = (unsigned char)minute;
-            LATD = (unsigned char)hour;
+            output();
         }
     }
 
@@ -4788,6 +4772,12 @@ void main(void) {
 
 
     TRISCbits.RC0 = 1;
+
+    TRISCbits.RC1 = 1;
+    TRISCbits.RC2 = 1;
+    TRISCbits.RC3 = 1;
+    TRISCbits.RC4 = 1;
+
 
 
     LATA = 0;
@@ -4824,10 +4814,51 @@ void main(void) {
 
     while(1){
         if(PORTCbits.RC0){
+
             milisecond = 0;
-            second = -1;
+            second = 0;
             minute = 0;
             hour = 0;
+        }else if(PORTCbits.RC1){
+
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC1){
+                minute = (minute + 59) % 60;
+                output();
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+            }
+            TMR1 = 65535 - 1000 + 35;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC2){
+
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC2){
+                minute = (minute + 1) % 60;
+                output();
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+            }
+            TMR1 = 65535 - 1000 + 35;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC3){
+
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC3){
+                hour = (hour + 23) % 24;
+                output();
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+            }
+            TMR1 = 65535 - 1000 + 35;
+            T1CONbits.TMR1ON = 1;
+        }else if(PORTCbits.RC4){
+
+            T1CONbits.TMR1ON = 0;
+            while(PORTCbits.RC4){
+                hour = (hour + 1) % 24;
+                output();
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+            }
+            TMR1 = 65535 - 1000 + 35;
+            T1CONbits.TMR1ON = 1;
         }
     }
 
@@ -4862,6 +4893,23 @@ void print_binary(int num){
 
 
     printf(binary);
+
+    return;
+}
+
+void output(void){
+
+    print_binary(hour);
+    printf(":");
+    print_binary(minute);
+    printf(":");
+    print_binary(second);
+    printf("\n");
+
+
+    LATA = (unsigned char)second;
+    LATB = (unsigned char)minute;
+    LATD = (unsigned char)hour;
 
     return;
 }
